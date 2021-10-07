@@ -1,30 +1,24 @@
-//import { ToastContainer, toast } from 'react-toastify';
-//import 'react-toastify/dist/ReactToastify.css';
 import Cookies from 'js-cookie'
 import { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import { Container } from './styled';
-
-import Seta from '../../assets/img/seta.png';
-import Img1 from '../../assets/img/pc.jpg';
+import Cabecalho from './cabecalho'
 
 export default function Index(props) {
-    const [produtos, setProdutos] = useState(props.location.state);
+    const [produtos] = useState(props.location.state);
     const navigation = useHistory();
 
     function Comprar() {
-        let ler = Cookies.get("carrinho");
+        let ler = Cookies.get('carrinho');
 
-        if(ler !== null) {
-            JSON.parse();
-        } else {
-            JSON([])
-        }
+            ler = ler !== undefined
+                ? JSON.parse(ler)
+                : [];
 
-        if(ler.some(item => item.id === produtos.id)) {
-            ler.push({...produtos, qtd: 1 })
-        }
+        if(ler.some(item => item.id === produtos.id) === false) 
+            ler.push({...produtos, qtd: 1 });
+        
 
         Cookies.set('carrinho', JSON.stringify(ler))
 
@@ -33,19 +27,13 @@ export default function Index(props) {
 
     return(
         <Container>
-            <div className="cabecalho">
-            <Link to="/"><div className="voltar">
-                        <div className="voltar-g"><img src={Seta} alt="" /></div>
-                        <div className="voltar-txt">Voltar</div>
-            </div></Link>
-                <div className="logo"><span style={{color: "#A107FF"}}>Careca</span> rei delas</div>
-            </div>
+            <Cabecalho />
 
             <div className="titulo">Detalhes do produto</div>
 
             <div className="box-g">
                 <div className="p1">
-                    <div className="img-b"><img src={Img1} alt=""/></div>
+                    <div className="img-b"><img src={produtos.imagem} alt=""/></div>
                     <div className="nome-b">{produtos.nome}</div>
                 </div>
                 <div className="p2">
@@ -54,9 +42,8 @@ export default function Index(props) {
                     <div className="i-b">{produtos.descricao}</div>
                     <div className="tit1-b">Especificações:</div>
                     <div className="i-b">{produtos.especificacoes}</div>
-                    <Link to={{ pathname: '/carrinho', state: props.info}}>
-                        <div className="btn-p"><button>Comprar</button></div>
-                    </Link>
+                    
+                    <div className="btn-p"><button onClick={Comprar}>Comprar</button></div>
                 </div>
             </div>
         </Container>

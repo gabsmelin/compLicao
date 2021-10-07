@@ -2,22 +2,10 @@ import styled from 'styled-components';
 
 const Container = styled.div`
     display: flex;
-    flex-direction: column;
-    background-color: #000;
-    min-height: 100vh;
-    padding: 50px;
+    flex-direction: row;
     color: #fff;
+    margin-bottom: 50px;
 
-    .titulo {
-        font-size: 32px;
-        font-weight: bold;
-        margin: 1em 0em 1.5em;
-    }
-
-    .g {
-        display: flex;
-        flex-direction: row;
-    }
 
     .box1 {
         display: flex;
@@ -27,10 +15,18 @@ const Container = styled.div`
         padding: 20px 40px;
         color: #000;
         width: 900px;
+        height: 150px;
         justify-content: space-between;
+        align-items: center;
     }
 
     .p1 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .p1-d {
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -42,27 +38,35 @@ const Container = styled.div`
     }
 
     .nome {
-        font-size: 18px;
-        font-weight: 500;
+        font-size: 19px;
+        font-weight: normal;
     }
 
+    .nome-p {
+        font-weight: 600;
+    }
     
+    .nome-i img {
+        width: 55px;
+        height: 55px;
+        cursor: pointer;
+    }
 
-
-
-
-
-
-
-
-
-    .box2 {
+    .nome-i button {
+        border: none;
+        background-color: transparent;
+    }
+    
+    .box-2 {
         display: flex;
         flex-direction: row;
         background-color: #fff;
+        margin-left: 50px;
         box-shadow: 8px 1px 0px 5px #cdcdcd;
         padding: 20px;
+        height: 150px;
         color: #000;
+        align-items: center;
     }
 `;
 

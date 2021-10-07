@@ -10,19 +10,6 @@ const Container = styled.div`
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 30px 50px;
 
-
-    .cabecalho {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .voltar {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-
     a, a:link {
         text-decoration: none;
         color: inherit;
@@ -31,28 +18,7 @@ const Container = styled.div`
     a:link:hover {
         text-decoration: underline;
     }
-
-    .voltar-g img {
-        color: #fff;
-        width: 30px;
-        height: 30px;
-        margin-top: 8px;
-    }
-
-    .voltar-txt {
-        font-weight: 500;
-        font-size: 18px;
-        margin-left: 8px;
-    }
-
-    .logo {
-        font-size: 22px;
-        width: 100px;
-        text-align: center;
-        font-weight: bolder;
-        line-height: 22px;
-    }
-
+    
     .titulo {
         font-size: 32px;
         font-weight: bold;
