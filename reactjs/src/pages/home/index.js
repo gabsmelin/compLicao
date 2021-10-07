@@ -7,10 +7,6 @@ import Produto from '../produto'
 
 import { Container } from "./styled"
 
-import Img1 from '../../assets/img/pc.jpg';
-import Img2 from '../../assets/img/poltrona.jpg';
-import Img3 from '../../assets/img/tecla-mouse.jpg';
-
 export default function Index(props) {
     const [produtod, setProdutos] = useState([]);
 
@@ -20,7 +16,7 @@ export default function Index(props) {
         [
             {
                 id: "1",
-                imagem: {Img1},
+                imagem: "https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/k/o/komor-intel-gtx-001_5.jpg",
                 nome: "PC Gamer",
                 preco: "R$12.000,00",
                 descricao: "Esse produto é muito legal e você deve comprá-lo porque sua vida será feliz!!!",
@@ -28,7 +24,7 @@ export default function Index(props) {
             }, 
             {
                 id: "2",
-                imagem: {Img2},
+                imagem: "https://static.netshoes.com.br/produtos/poltrona-gamer-mancer-fenrir-pretoazul-mcr-fnr-bu01/18/0Y9-0084-118/0Y9-0084-118_zoom1.jpg?ts=1618271796&ims=544x",
                 nome: "Poltrona Gamer",
                 preco: "R$1.500,00",
                 descricao: "Esse produto é muito legal e você deve comprá-lo porque sua vida será feliz!!!",
@@ -36,7 +32,7 @@ export default function Index(props) {
             },
             {
                 id: "3",
-                imagem: {Img3},
+                imagem: "https://images-americanas.b2w.io/produtos/01/00/img/3327068/5/3327068592_1SZ.jpg",
                 nome: "Teclado e Mouse Gamer",
                 preco: "R$150,00",
                 descricao: "Esse produto é muito legal e você deve comprá-lo porque sua vida será feliz!!!",

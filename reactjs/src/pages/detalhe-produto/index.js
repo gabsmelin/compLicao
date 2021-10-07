@@ -13,6 +13,24 @@ export default function Index(props) {
     const [produtos, setProdutos] = useState(props.location.state);
     const navigation = useHistory();
 
+    function Comprar() {
+        let ler = Cookies.get("carrinho");
+
+        if(ler !== null) {
+            JSON.parse();
+        } else {
+            JSON([])
+        }
+
+        if(ler.some(item => item.id === produtos.id)) {
+            ler.push({...produtos, qtd: 1 })
+        }
+
+        Cookies.set('carrinho', JSON.stringify(ler))
+
+        navigation.push('/carrinho');
+    }
+
     return(
         <Container>
             <div className="cabecalho">

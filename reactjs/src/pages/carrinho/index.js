@@ -3,10 +3,12 @@
 //import { useState } from 'react';
 //import { Link, useHistory } from 'react-router-dom';
 
+import { Container } from "./styled"
+
 export default function Index() {
     return(
-        <div classname="container">
-
-        </div>
+        <Container>
+            <div>oi</div>
+        </Container>
     )
 }
