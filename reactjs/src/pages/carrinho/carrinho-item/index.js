@@ -1,14 +1,15 @@
 import ContadorU from '../contador-uni'
 import ContadorT from '../contador-total'
 import { Container } from './styled';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Remover from '../../../assets/img/lixo.png'
 
 export default function Index(props) {
     const [produtos] = useState(props.info);
-    const [precov] = useState(props.info.preco);
+    const [precov] = useState(props.info.precoint);
     const [qtd, setQtd ] = useState(1);
+    const [total, setTotal] = useState(precov);
 
     function incrementar() {
         let r = setQtd(qtd+1)
@@ -21,12 +22,10 @@ export default function Index(props) {
         setQtd(qtd-1)
     }
 
-    function total() {
-        let p = precov.replace(/[^0-9]/g,'');
-        let c = parseInt(p)
-        let r = setQtd(qtd * c);
-        return r;
-    }
+
+    useEffect(() => {
+        setTotal(qtd * precov);
+    }, [qtd])
 
     function remover() {
         props.onRemove(produtos.id);
@@ -61,7 +60,7 @@ export default function Index(props) {
             </div>
 
             <div className="box-2">
-                <ContadorT  total={total} qtd={qtd}/>
+                <ContadorT  total={total} />
             </div>
         </Container>
     )
