@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Container } from "./styled"
 
-
-
 export default function Index(props) {
     return(
         <Container>

@@ -1,7 +1,3 @@
-import CarouselConfig from './funcao-carrosel/index';
-
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
 import { useState } from 'react';
 
 import Produto from '../produto'
@@ -49,24 +45,20 @@ export default function Index(props) {
 
     return(
         <Container>
+
             <div className="titulo">Sejam bem-vindos!</div>
             <div className="btn"><button onClick={listar}>Listar</button></div>
 
             
             <div className="box-p">
-                <Carousel
-                responsive={CarouselConfig}
-                infinite={true}
-                showDots={true}
-                containerClass="carousel-container"
-                >
-
+          
                 {produtod.map(item => 
-                    <Produto info={item}/>
+                    <Produto 
+                    key={item.id}
+                    info={item} />
                 )}
-
-                </Carousel>
             </div>
+
         </Container>
     )
 }
